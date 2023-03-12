@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>JavaScript</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <h1><a href="index.html">WEB</a></h1>
+        <input id="night_day" type="button" value="night" onclick="
+            if(document.querySelector('#night_day').value === 'night') { //night_day를 타겟하고 그값이 night라면 true인if문을 실행
+                document.querySelector('body').style.backgroundColor = 'black' ;
+                document.querySelector('body').style.color = 'white' ;
+                document.querySelector('#night_day').value = 'day' ; //실행이 된후 value값은 day를 가진다
+            } else {
+                document.querySelector('body').style.backgroundColor = 'white' ;
+                document.querySelector('body').style.color = 'black' ;
+                document.querySelector('#night_day').value = 'night' ; //실행후 value값은 night를 가진다
+            }
+        ">
+
+        <div id="grid">
+            <ol>
+                <li><a href="1.html">HTML</a></li>
+                <li><a href="2.html">CSS</a></li>
+                <li><a href="3.html">JavaScript</a></li>
+            </ol>
+            <div id="article"> 
+                <h2>js란</h2>
+                <p>어쩌고 저쩌고</p>
+            </div>
+        </div>
+    </body>
+</html>
+    
