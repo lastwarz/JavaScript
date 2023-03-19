@@ -2,35 +2,50 @@
     <head>
         <title>JavaScript</title>
         <link rel="stylesheet" href="style.css" />
+        <script>
+            let Links = {
+                setColor:function (color) {
+                    var alist = document.querySelectorAll('a');
+                        var i = 0;
+                        while(i < alist.length) {
+                        alist[i].style.color = color;
+                        i = i + 1;
+                        }
+                    }  
+            }
+            let Body = {
+                    setColor:function (color) {
+                        document.querySelector('body').style.color = color;
+                },
+                    setBackgroundColor:function (color) {
+                document.querySelector('body').style.backgroundColor = color;
+                }
+            }
+            function nightDayHandler(self) {
+            const target = document.querySelector('body');
+                if(self.value === 'night') { //self 값이 night라면 true인if문을 실행
+                    Body.setBackgroundColor('black');
+                    Body.setColor('white');
+                    self.value = 'day' ; //실행이 된후 value값은 day를 가진다
+
+                    Links.setColor('pink');
+                }
+                else {
+                    Body.setBackgroundColor('white');
+                    Body.setColor('black');
+                    self.value = 'night' ; //실행후 value값은 night를 가진다
+                    
+                    Links.setColor('blue');
+                    }
+                }
+        </script>
     </head>
     <body>
         <h1><a href="index.html">WEB</a></h1>
         <input type="button" value="night" onclick="
-            const target = document.querySelector('body');
-            if(this.value === 'night') { //this 값이 night라면 true인if문을 실행
-                target.style.backgroundColor = 'black' ;
-                target.style.color = 'white' ;
-                this.value = 'day' ; //실행이 된후 value값은 day를 가진다
-                    var alist = document.querySelectorAll('a');
-                        var i = 0;
-                        while(i < alist.length) {
-                        alist[i].style.color = 'pink';
-                         i = i + 1;
-                        }   
-            }
-            else {
-                target.style.backgroundColor = 'white' ;
-                target.style.color = 'black' ;
-                this.value = 'night' ; //실행후 value값은 night를 가진다
-                var alist = document.querySelectorAll('a');
-                    var i = 0;
-                    while(i < alist.length) {
-                        alist[i].style.color = 'blue';
-                         i = i + 1;
-                    }
-                
-            }
+        nightDayHandler(this);
         ">
+        
 
         <div id="grid">
             <ol>
